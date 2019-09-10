@@ -12,11 +12,11 @@ const formMaker = () => {
                   <h3>Enter First Year's Name</h3>
                     <div class="d-flex justify-content-center">
                        <div class="col-auto">
-                        <label class="sr-only" for="inlineFormInput">Name</label>
-                        <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Neville Longbottom">
+                         <label class="sr-only" for="inlineFormInput">Name</label>
+                         <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Neville Longbottom">
                        </div>
                        <div class="col-auto">
-                            <button type="sort" class="btn btn-primary mb-2" id="inputButton">Sort!</button>
+                         <button type="sort" class="btn btn-primary mb-2" id="inputButton">Sort!</button>
                        </div>
         </form>
     `;
@@ -34,9 +34,9 @@ const sortingCardBuilder = () => {
     let formInput = document.getElementById("inlineFormInput").value;
     let domString = `
           <div class="card">
-          <h1 class="card-name">${formInput}</h1>
-          <p class="card-house">${randomHouse}</p>
-          <button type="button" class="btn btn-dark expel">Expel</button>
+            <h1 class="card-name">${formInput}</h1>
+            <p class="card-house">${randomHouse}</p>
+            <button type="button" class="btn btn-dark expel">Expel</button>
           </div>
           `;
         printToDom ("sorted-student-list", domString);
