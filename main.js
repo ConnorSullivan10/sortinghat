@@ -36,10 +36,13 @@ const sortingCardBuilder = () => {
           <div class="card">
           <h1 class="card-name">${formInput}</h1>
           <p class="card-house">${randomHouse}</p>
-          <button type="button" class="btn btn-dark" id="expel">Expel</button>
+          <button type="button" class="btn btn-dark expel">Expel</button>
           </div>
           `;
         printToDom ("sorted-student-list", domString);
+
+        // Call activateExpelListeners here
+        activateExpelListeners();
   }
 
 //document.getElementById("inputButton").addEventListener("click", sortingCardBuilder);
@@ -49,4 +52,16 @@ document.getElementById("form").addEventListener("click", (event) => {
         sortingCardBuilder()
     }
 })
+
+// Define activateExpelListeners here
+const activateExpelListeners = () => {
+    const expelButtons = document.getElementsByClassName("expel")
+    for (let i = 0; i < expelButtons.length; i++) {
+        const currentButton = expelButtons[i]
+        currentButton.addEventListener("click", (event) => {
+            console.log(event.target.parentElement);
+            event.target.parentElement.remove();
+        })
+    }
+}
 
